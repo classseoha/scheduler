@@ -206,6 +206,10 @@ NONE
 * 성공 응답 (Error - 200 OK)
 * 실패 응답 (Error - 400 Bad Request, 404 NOT FOUND)
 
+## 개발 환경 및 기술 스택
 
+* 백엔드: Java 17, Spring Boot, Spring JDBC
+* 데이터베이스: MySQL
+* 빌드 도구: Gradle
 
 
