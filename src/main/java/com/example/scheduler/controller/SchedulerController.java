@@ -28,7 +28,7 @@ public class SchedulerController {
         return new ResponseEntity<>(schedulerService.createSchedule(dto), HttpStatus.CREATED);
     }
 
-    //등록된 일정 목록 검색 조회 요청, 응답 메서드(name, updatedAt)
+    //이름, 수정일자를 검색하여 등록된 일정 목록 조회 요청, 응답 메서드(name, updatedAt)
     @GetMapping
     public ResponseEntity<List<SchedulerResponseDto>> findSchedule(@RequestBody SchedulerRequestDto dto) {
 
