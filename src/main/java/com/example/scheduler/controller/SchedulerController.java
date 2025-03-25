@@ -27,9 +27,9 @@ public class SchedulerController {
     }
 
     @GetMapping
-    public ResponseEntity<List<SchedulerResponseDto>> findSchedule() {
+    public ResponseEntity<List<SchedulerResponseDto>> findSchedule(@RequestBody SchedulerRequestDto dto) {
 
-        return new ResponseEntity<>(schedulerService.findSchedule(), HttpStatus.OK);
+        return new ResponseEntity<>(schedulerService.findSchedule(dto), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

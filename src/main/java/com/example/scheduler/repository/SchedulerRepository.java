@@ -11,7 +11,7 @@ public interface SchedulerRepository {
 
     SchedulerResponseDto createSchedule(Scheduler scheduler);
 
-    List<SchedulerResponseDto> findSchedule();
+    List<SchedulerResponseDto> findSchedule(Scheduler scheduler);
 
     Optional<Scheduler> findScheduleById(Long id);
 

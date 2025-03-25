@@ -30,9 +30,11 @@ public class SchedulerServiceImpl implements SchedulerService {
     }
 
     @Override
-    public List<SchedulerResponseDto> findSchedule() {
+    public List<SchedulerResponseDto> findSchedule(SchedulerRequestDto dto) {
 
-        return schedulerRepository.findSchedule();
+        Scheduler scheduler = new Scheduler(dto.getName(), dto.getUserUpdatedAt());
+
+        return schedulerRepository.findSchedule(scheduler);
     }
 
     @Override

@@ -51,9 +51,9 @@ public class SchedulerRepositoryImpl implements SchedulerRepository {
     }
 
     @Override
-    public List<SchedulerResponseDto> findSchedule() {
+    public List<SchedulerResponseDto> findSchedule(Scheduler scheduler) {
 
-        return jdbcTemplate.query("select * from scheduler", schedulerRowMapper());
+        return jdbcTemplate.query("SELECT * FROM scheduler WHERE name = ? OR DATE(updatedAt) = ?", schedulerRowMapper(), scheduler.getName(), scheduler.getUserUpdatedAt());
     }
 
     @Override

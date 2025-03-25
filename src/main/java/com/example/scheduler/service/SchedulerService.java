@@ -10,7 +10,7 @@ public interface SchedulerService {
 
     SchedulerResponseDto createSchedule(SchedulerRequestDto dto);
 
-    List<SchedulerResponseDto> findSchedule();
+    List<SchedulerResponseDto> findSchedule(SchedulerRequestDto dto);
 
     SchedulerResponseDto findScheduleById(Long id);
 
