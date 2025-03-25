@@ -10,6 +10,12 @@
 * 사용자가 할 일을 등록하고, 수정 및 삭제할 수 있도록 지원
 * 특정 작성자나 날짜를 기준으로 일정 조회 가능
 
+## 개발 환경 및 기술 스택
+
+* 백엔드: Java 17, Spring Boot, Spring JDBC
+* 데이터베이스: MySQL
+* 빌드 도구: Gradle
+
 ## 주요 기능
 
 **1. 일정 생성 (Create)**
@@ -205,11 +211,4 @@ NONE
 
 * 성공 응답 (Error - 200 OK)
 * 실패 응답 (Error - 400 Bad Request, 404 NOT FOUND)
-
-## 개발 환경 및 기술 스택
-
-* 백엔드: Java 17, Spring Boot, Spring JDBC
-* 데이터베이스: MySQL
-* 빌드 도구: Gradle
-
 
