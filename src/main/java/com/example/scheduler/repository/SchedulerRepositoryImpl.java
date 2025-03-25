@@ -25,6 +25,7 @@ public class SchedulerRepositoryImpl implements SchedulerRepository {
     private final JdbcTemplate jdbcTemplate;
 
     public SchedulerRepositoryImpl(JdbcTemplate jdbcTemplate) {
+
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -32,6 +33,7 @@ public class SchedulerRepositoryImpl implements SchedulerRepository {
     public SchedulerResponseDto createSchedule(Scheduler scheduler) {
 
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
+
         jdbcInsert.withTableName("scheduler").usingGeneratedKeyColumns("id");
 
         Map<String, Object> parameters = new HashMap<>();
@@ -42,10 +44,8 @@ public class SchedulerRepositoryImpl implements SchedulerRepository {
         parameters.put("createdAt", scheduler.getCreatedAt());
         parameters.put("updatedAt", scheduler.getUpdatedAt());
 
+        //저장 후 생선된 key값(id값)을 number 타입으로 반환하는 코드
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
-
-//        List<SchedulerResponseDto> result = jdbcTemplate.query("select * from memo", schedulerRowMapper());
-//        String createdAt = jdbcTemplate.queryForObject("select createdAt from scheduler where id = ?", String.class, key.toString());
 
         return new SchedulerResponseDto(key.longValue(), scheduler.getName(), scheduler.getTodo(), scheduler.getCreatedAt(), scheduler.getUpdatedAt());
     }

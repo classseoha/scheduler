@@ -20,7 +20,7 @@ public class Scheduler {
     private String todo;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private String userUpdatedAt;
+    private String userUpdatedAt; //수정일 기준으로 게시물 조회 시 수정일 입력 받을 필드
 
 
     //새 게시물 생성 시 자동으로 시간 설정
@@ -36,8 +36,8 @@ public class Scheduler {
         this.id = id;
         this.name = name;
         this.todo = todo;
-        this.createdAt = createdAt; //생성시간 설정
-        this.updatedAt = updatedAt; //수정시간 설정
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Scheduler(Long id, String name, String password, String todo, LocalDateTime createdAt, LocalDateTime updatedAt) {
@@ -45,8 +45,8 @@ public class Scheduler {
         this.name = name;
         this.password = password;
         this.todo = todo;
-        this.createdAt = createdAt; //생성시간 설정
-        this.updatedAt = updatedAt; //수정시간 설정
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Scheduler(String name, String userUpdatedAt) {
@@ -60,7 +60,4 @@ public class Scheduler {
         this.todo = todo;
         this.updatedAt = LocalDateTime.now(); //수정시간 업데이트
     }
-
-
-
 }
